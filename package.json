@@ -1,0 +1,57 @@
+{
+    "name": "discord-poll",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "ts-node-dev -T -r tsconfig-paths/register src/client.ts",
+        "pre-push": "yarn test",
+        "prepare": "husky install",
+        "lint": "eslint --cache --cache-location node_modules/.cache/eslintcache --fix",
+        "test": "jest --verbose"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged --verbose",
+            "pre-push": "yarn pre-push"
+        }
+    },
+    "lint-staged": {
+        "**/*.{js,ts}": "yarn lint"
+    },
+    "dependencies": {
+        "@types/express": "^4.17.15",
+        "@types/lodash": "^4.14.191",
+        "@types/node": "^18.11.18",
+        "@types/node-fetch": "^2.6.2",
+        "discord-interactions": "^3.2.0",
+        "discord.js": "^14.7.1",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "lodash": "^4.17.21",
+        "node-fetch": "2.6.6",
+        "promise.defer": "^2.0.0",
+        "ts-node-dev": "^2.0.0",
+        "ts-server": "^0.0.15",
+        "tsconfig-paths": "^4.1.2",
+        "tslib": "^2.4.1",
+        "typescript": "^4.9.4"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.2.5",
+        "@typescript-eslint/eslint-plugin": "^5.48.0",
+        "@typescript-eslint/parser": "^5.48.0",
+        "eslint": "^8.31.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-import-resolver-typescript": "^3.5.2",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jest": "^27.2.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.31.11",
+        "husky": "^8.0.3",
+        "jest": "^29.3.1",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.1",
+        "ts-jest": "^29.0.3"
+    }
+}
