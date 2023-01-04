@@ -10,6 +10,9 @@ dotenv.config({ path: path.join(root, '.env.local') });
 dotenv.config({ path: path.join(root, '.env') });
 
 const config = {
+    mysql: {
+        url: env('string', 'MYSQL_CONNECTION_STRING'),
+    },
     server: {
         port: env('number', 'PORT', 3000),
     },
