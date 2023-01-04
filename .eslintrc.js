@@ -28,7 +28,7 @@ module.exports = {
         node: true,
         browser: true,
     },
-    ignorePatterns: ['.eslintrc.js', 'generated/**'],
+    ignorePatterns: ['.eslintrc.js', 'generated/**', 'bin/**'],
     extends: [
         'prettier',
         'eslint:recommended',

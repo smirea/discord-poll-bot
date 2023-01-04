@@ -2,7 +2,7 @@ import path from 'path';
 
 import dotenv from 'dotenv';
 
-const root = __dirname.includes('/build/')
+const root = __dirname.includes('/dist/')
     ? path.join(__dirname, '..', '..')
     : path.join(__dirname, '..');
 

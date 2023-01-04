@@ -1,13 +1,14 @@
 {
-    "name": "discord-poll",
+    "name": "@smirea/discord-poll-bot",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "ts-node-dev -T -r tsconfig-paths/register src/client.ts",
+        "start": "node dist/src/client.js",
+        "dev": "ts-node-dev -T -r tsconfig-paths/register src/client.ts",
         "pre-push": "yarn test",
         "prepare": "husky install",
-        "build": "tsc",
+        "build": "tsc --incremental -p tsconfig-build.json && tsc-alias",
         "lint": "eslint --cache --cache-location node_modules/.cache/eslintcache --fix",
         "test": "jest --verbose",
         "test:ci": "jest --verbose --ci"
@@ -35,6 +36,7 @@
         "promise.defer": "^2.0.0",
         "ts-node-dev": "^2.0.0",
         "ts-server": "^0.0.15",
+        "tsc-alias": "^1.8.2",
         "tsconfig-paths": "^4.1.2",
         "tslib": "^2.4.1",
         "typescript": "^4.9.4"

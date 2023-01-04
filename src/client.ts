@@ -4,6 +4,7 @@ import _ from 'lodash';
 import PollCommand from './commands/PollCommand';
 import RankedChoicePollCommand from './commands/RankedChoicePoll';
 import TestCommand from './commands/TestCommand';
+import config from './config';
 
 const commands = [PollCommand, RankedChoicePollCommand, TestCommand];
 
@@ -16,6 +17,8 @@ const client = new Client({
 });
 
 export default client;
+
+void client.login(config.discord.bot.token);
 
 client.on('ready', async () => {
     if (!client.user || !client.application) {
